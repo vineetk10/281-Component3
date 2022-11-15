@@ -60,31 +60,41 @@ export default class CreateRobot extends Component {
 
     console.log(robot);
 
-    axios.post('http://localhost:4000/robots/add', robot)
-      .then(res => console.log(res.data + 'in 4000 robots add'));
+    return axios.post('http://localhost:4000/robots/add', robot)
+      .then(res => window.location.reload(true));
 
     
+  }
+  deleteRobot(id){
+    axios.delete('http://localhost:4000/robots/'+id)
+      .then(response => { console.log(response.data)});
+
+    this.setState({
+      robots: this.state.robots.filter(el => el._id !== id)
+    })
   }
 
   robotList() {
     if (this.state.robots && this.state.robots.length){
 
 
-    return this.state.robots.map(robot => {
-      return (<tr>
+    return this.state.robots.map((robot,index) => {
+      return (<tr key={index}>
         <td>{robot.robotname}</td>
         <td>{robot.robottype}</td>
         <td>{robot.createdAt}</td>
-        {/* <td>
-           <a href="#" onClick={() => { props.deleteDelivery(props.delivery._id) }}>delete</a>
-        </td> */}
+        <td>
+           <a href="#" onClick={() => { this.deleteRobot(robot._id) }}>delete</a>
+        </td>
       </tr>);
     })
     }else{
       return (<tr><td>Loading</td></tr>)
     }
   }
+  
   render() {
+    
     return (
       <>
       <div>
@@ -99,25 +109,28 @@ export default class CreateRobot extends Component {
                 onChange={this.onChangeRobotname}
                 />
           </div>
+          <br/>
     <div className='form-group'>
       <label>
         Type of Robot
       </label>
-
+<br/>
       <select value={this.state.robottype} onChange={this.onChangeRobotType}>
         <option value="Model A">Model A</option>
         <option value="Model B">Model B</option>
         <option value="Model C">Model C</option>
       </select>
       
-
+      <br/>
     </div>
+    <br/>
           <div className="form-group">
             <input type="submit" value="Create robot" className="btn btn-primary" />
           </div>
         </form>
         
     </div>
+    <br/>
     <div className='form-group'>
     <h3>Robots Available:</h3>
         <table className="table">

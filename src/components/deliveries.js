@@ -7,7 +7,8 @@ const Delivery = props => (
     <td>{props.delivery.robotname}</td>
     <td>{props.delivery.description}</td>
     <td>{props.delivery.duration}</td>
-    <td></td>
+    <td>{props.delivery.date}</td>
+    {/* <td></td> */}
     {/* <td>{props.delivery.date.substring(0,10)}</td> */}
     <td>{props.delivery.deliveryStatus}</td>
   </tr>

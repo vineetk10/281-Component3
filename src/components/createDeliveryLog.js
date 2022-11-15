@@ -47,8 +47,8 @@ export default class CreateDeliveryLog extends Component {
       return (<tr>
         <td>{delivery.robotname}</td>
         <td>{delivery.description}</td>
-        <td>{delivery.createdAt}</td>
-          <td>{delivery.status}</td>
+        <td>{delivery.date}</td>
+          <td>{delivery.deliveryStatus}</td>
       
       </tr>);
     })
@@ -115,7 +115,7 @@ export default class CreateDeliveryLog extends Component {
         </div>
         
 
-      
+      <br/>
 
         <div className="form-group">
           <input type="submit" value="Create Delivery Log" className="btn btn-primary" />
