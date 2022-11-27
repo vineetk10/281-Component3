@@ -92,13 +92,13 @@ export default class CreateDeliveryLog extends Component {
 
   render() {
     return (
-      <>
-    <div>
-      <h3>Create New Delivery Log</h3>
+      <div style={{ height:'100vh', backgroundColor: 'black'}}>
+    <div   >
+      <h3 style={{color: 'coral', marginLeft:'auto', width: '50%', fontSize: '3rem', marginRight:'2rem'}}>Create New Delivery Log</h3>
       <form onSubmit={this.onSubmit}>
         <div className="form-group"> 
-          <label>Robotname: </label>
-          <select ref="robotInput"
+          <label style={{backgroundColor: 'black',color:'blanchedalmond', fontSize:'2.5rem'}}>Robotname: </label>
+          <select  ref="robotInput"
               required
               className="form-control"
               value={this.state.robotname}
@@ -111,6 +111,7 @@ export default class CreateDeliveryLog extends Component {
                     </option>;
                 })
               }
+              
           </select>
         </div>
         
@@ -123,22 +124,22 @@ export default class CreateDeliveryLog extends Component {
       </form>
     </div>
     <div className='form-group'>
-    <h3>Deliveries:</h3>
+    <h3 style={{color:'blanchedalmond', fontSize:'2.5rem'}}>Deliveries:</h3>
         <table className="table">
           <thead className="thead-light">
-            <tr>
+            <tr style={{color:'coral', fontSize:'2rem'}}>
               <th>Robotname</th>
               <th>Description</th>
               <th>Date</th>
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style={{color:'white', fontSize:'1rem',  border: '2px solid #8739fa'}}>
             { this.deliveryList() }
           </tbody>
         </table>
     </div>
-    </>
+    </div>
     )
   }
 }

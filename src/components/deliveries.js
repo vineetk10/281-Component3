@@ -50,11 +50,11 @@ export default class DeliveriesList extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Logged Deliveries</h3>
-        <table className="table">
+      <div style={{ height:'100vh', backgroundColor: 'black'}}>
+        <h3 style={{color: 'coral', marginLeft:'auto', width: '50%', fontSize: '2rem', marginRight:'2rem'}}>Logged Deliveries</h3>
+        <table className="table" style={{backgroundColor: 'black',color:'white', border: '2px solid #8739fa'}}>
           <thead className="thead-light">
-            <tr>
+            <tr style={{fontSize:'1.5rem', color:'burlywood'}}>
               <th>Robotname</th>
               <th>Description</th>
               <th>Duration</th>

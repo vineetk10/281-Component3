@@ -96,12 +96,12 @@ export default class CreateRobot extends Component {
   render() {
     
     return (
-      <>
+      <div style={{ height:'100vh', backgroundColor: 'black'}}>
       <div>
-        <h3>Create New robot</h3>
+        <h3 style={{color:'coral', fontSize:'2.5rem'}}>Create New robot</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
-            <label>Robotname: </label>
+            <label style={{color:'blanchedalmond', fontSize:'2.5rem'}}>Robotname: </label>
             <input  type="text"
                 required
                 className="form-control"
@@ -111,7 +111,7 @@ export default class CreateRobot extends Component {
           </div>
           <br/>
     <div className='form-group'>
-      <label>
+      <label style={{color:'blanchedalmond', fontSize:'2.5rem'}}>
         Type of Robot
       </label>
 <br/>
@@ -132,22 +132,22 @@ export default class CreateRobot extends Component {
     </div>
     <br/>
     <div className='form-group'>
-    <h3>Robots Available:</h3>
+    <h3 style={{color:'blanchedalmond', fontSize:'2.5rem'}}>Robots Available:</h3>
         <table className="table">
           <thead className="thead-light">
-            <tr>
+            <tr style={{color:'coral', fontSize:'2rem'}}>
               <th>Robotname</th>
               <th>Robot Type</th>
               <th>Date Created</th>
               <th>Delete</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style={{color:'white', fontSize:'1rem', border: '2px solid #8739fa'}}>
             { this.robotList() }
           </tbody>
         </table>
     </div>
-    </>
+    </div>
 
     )
   }
